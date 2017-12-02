@@ -3,4 +3,13 @@
 First year of doing advent of code. Will keep a running list of each day and my thought on how I solved it. 
 
 ## [Day 1](http://adventofcode.com/2017/day/1) ([My Solution](https://github.com/FranciscoAT/adventOfCode2017/tree/master/day1))
+
+### Part 1
 Quick and easy question where it feeds a list. Then if `a[i] == a[i+1]` then add `a[i]` to a building sum. Additionally this array wraps. So my solution was to loop through the array, run the check and add or do not add accordingly. Then run a quick check for `a[n] == a[0]` and add accordingly then return. 
+
+### Part 2
+Here the question was same as part 1 except basically if the integer halfway around the circular array is the same add it. So the soultion is the same except to now check for if `a[i] == a[(i+n/2)%n]` then add. Only need to loop through the array once. 
+
+## [Day 2](http://adventofcode.com/2017/day/2) ([My Solution](https://github.com/FranciscoAT/adventOfCode2017/tree/master/day2))
+
+
