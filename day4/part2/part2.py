@@ -12,14 +12,8 @@ def count_valid(password_list):
     return valid_count
 
 def check_valid(password):
-    seen = []
-    for passphrase in password:
-        sorted_passphrase = sorted(passphrase)
-        if sorted_passphrase not in seen:
-            seen.append(sorted_passphrase)
-        else:
-            return False
-    return True
+    uniques = set([''.join(sorted(list(passphrase))) for passphrase in password])
+    return len(uniques) == len(password)
 
 if __name__ == '__main__':
     main()
