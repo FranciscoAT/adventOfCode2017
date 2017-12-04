@@ -6,13 +6,8 @@ def check_valid(password_list):
     return valid_count
 
 def check_unique(phrase_list):
-    seen = set()
-    for phrase in phrase_list:
-        if phrase not in seen:
-            seen.add(phrase)
-        else:
-            return False
-    return True
+    seen = set(phrase_list)
+    return (len(seen) == len(phrase_list))
 
 if __name__ == '__main__':
     input_lists = []
