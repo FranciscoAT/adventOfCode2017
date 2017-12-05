@@ -31,7 +31,7 @@ Same as Part 1 except they define a valid passphrase where no two words in the p
 ## [Day 5](http://adventofcode.com/2017/day/5) ([My Solutions](https://github.com/FranciscoAT/adventOfCode2017/tree/master/day5))
 
 ### Part 1
-Question involved was given an array like `[0,3,0,1,-3]` starting at index `0`. We move our index around based on the value at the current index. Then after moving, increment the index value we were just on by 1. So in the example given it would take 5 steps. The solution here was simply to run a while loop and move and increment appropriately until `index < 0` or `index > len(arr)`. 
+Question involved was given an array like `[0,3,0,1,-3]` starting at index `0`. We move our index around based on the value at the current index. Then after moving, increment the index value we were just on by 1. If the new index is outside of the array the algorithm is considered "complete". So in the example given it would take 5 steps. The solution here was simply to run a while loop and move and increment appropriately until `index < 0` or `index > len(arr)`. 
 
 ### Part 2
 Same as part one, except if `a[index] > 2` decrement after moving else increment like before. The solution is the exact same except involves a new checker to see if we should increment or decrement.
