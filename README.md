@@ -35,3 +35,11 @@ Question involved was given an array like `[0,3,0,1,-3]` starting at index `0`. 
 
 ### Part 2
 Same as part one, except if `a[index] > 2` decrement after moving else increment like before. The solution is the exact same except involves a new checker to see if we should increment or decrement.
+
+## [Day 6](http://adventofcode.com/2017/day/6) ([My Solutions](https://github.com/FranciscoAT/adventOfCode2017/tree/master/day5))
+
+### Part 1
+This question gave an array of "Memory Banks" (array of ints). Each Memory Bank had a certain number of "Memory Blocks" defined by the value at that index in the array. It then asked to redistribute the Memory Banks by finding the largest Memory Bank (if a tie it would grab the first from the left) then removing all of its Memory Blocks and giving one of the removed Blocks to the next Bank, then another to the following one, etc... (if you reached the end of the Memory Banks it would loop back around to the first one). Then repeat this process until it notices a loop forms, ie. if it detects that the current state of the Memory Banks is the same as a previous state encoutered before. The solution was rather straightforward. Simply it would loop through and run the restribution algorithm. Each time it finishes the redistribution algorithm it would store the state of the Banks into a Python `set`. If it found that after running the alogirthm we are back in a seen before state it would stop looping and return the current reallocation count. 
+
+### Part 2
+Same as part one but instead it wants to know how many steps the loop is, e.g if given `[0,2,7,0]` you'll find that after the first iteration you'll get `[2,4,1,2]` and after the 5th iteration you'll get `[2,4,1,2]` again. Therefore it has a loop length of `4`. The algorithm to solve was the exact same as the first except we didnt need to keep count of how many times the Banks were reallocated. Instead we stored each bank config encoutered into a Python `list`, then when we found one that we encoutered before we break from the loop, and return the length of the `list` subtract the index of where the current Banks configuration was placed intially. 
