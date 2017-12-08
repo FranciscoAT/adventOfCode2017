@@ -18,7 +18,7 @@ This question involved getting a few rows of values. Then look for the maximum d
 ### Part 2
 Like the first it involved several rows of values. However each row only has two values `a`,`b` where `a%b==0`. So for this one I came up with a quick brute force method which would sort the row then look at `a[i]` where `0<i<n-1`. Then check if `a[j]%a[i]==0` where `i<j<n`. If yes would return `a[j]/a[i]` else `0` (although each row was guarenteed a non-zero return). Added these values up and returned the final result.
 
-## [Day 3](http://adventofcode.com/2017/day/3) ([My Solutions](https://github.com/FranciscoAT/adventOfCode2017/tree/master/day4/part1))
+## [Day 3](http://adventofcode.com/2017/day/3) ([My Solutions](https://github.com/FranciscoAT/adventOfCode2017/tree/master/day3/part1))
 
 ### Part 1
 Here we had an interesting spiral that lists the numbers. My solution was using some simple math I was able to calculate the range at each of the layers. So it would loop until it found a layer where the number I was looking for was located in. Then it would find where it is in the layer. That being either in one of the corners. One of the middles `N,S,E,W`. Or between one corner or one `N,S,E,W`. From there it would do some simple calculations based on its layer and location to return the number of required steps.
