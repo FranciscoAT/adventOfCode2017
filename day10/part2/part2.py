@@ -4,13 +4,11 @@ import binascii
 def main():
     # lengths = [int(x) for x in input().split(',')]
     lengths = get_lengths()
-
     index = 0
     skip = 0
     values = list(range(256))
     for _ in range(64):
         values, index, skip = run_hash(values, lengths, index, skip)
-
     dense_hash = get_dense_hash(values)
     hex_value = convert_to_hex(dense_hash)
     print(hex_value)
@@ -46,7 +44,6 @@ def convert_to_hex(dense_hash):
     for index in range(len(dense_hash)):
         dense_hash[index] = hex(dense_hash[index])
     return ''.join(dense_hash)
-
 
 if __name__ == '__main__':
     main()

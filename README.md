@@ -75,3 +75,10 @@ We're given a stream of characters. The important characters being `{`,`}`,`<`,`
 ### Part 2
 Same as part one but wants us to return how many characters are inside garbage excluding `!` and characters ignored by `!`.  So here if we are in `garbage` we simply ignore everything until we hit `<` and toggle that we are in `garbage`. Then while in `garbage` if we hit `>` we toggle that we are no longer in `garbage`. If we hit `!` we increase the `index` to skip the next character. Else we increment our `garbage_count`. Then we return `garbage_count`.
 
+## [Day 10](http://adventofcode.com/2017/day/10) ([My Solutions](https://github.com/FranciscoAT/adventOfCode2017/tree/master/day10))
+
+### Part 1
+Long problem to explain so will leave to potential reader. Solution here was to simply take in the lenghts. The for each length run the algorithm by iterating thorugh a `for loop` half the amount of the length and swapping the first and last, second and second-last, etc... Then return that, then we can easily multiply the first two values.
+
+### Part 2
+By using the algorithm in Part 1, I slightly modified it so that it will take in `step`, `index`, `commands` and `values`. So that the `step` and `index` are preserved and we allow for the `values` to keep changing throughout the `64` times we run the hash. Then I run the `values` through a function that will take each set of 16 values run the `XOR` operation on each of the values and append that to our new `dense_hash` list. Then I run these values through another function that will turn each of them into their `hex` values after which with some quick manual manipulation we can remove the `0x`'s and add in a `0` if needed. 
