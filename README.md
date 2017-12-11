@@ -82,3 +82,11 @@ Long problem to explain so will leave to potential reader. Solution here was to 
 
 ### Part 2
 By using the algorithm in Part 1, I slightly modified it so that it will take in `step`, `index`, `commands` and `values`. So that the `step` and `index` are preserved and we allow for the `values` to keep changing throughout the `64` times we run the hash. Then I run the `values` through a function that will take each set of 16 values run the `XOR` operation on each of the values and append that to our new `dense_hash` list. Then I run these values through another function that will turn each of them into their `hex` values after which with some quick manual manipulation we can remove the `0x`'s and add in a `0` if needed. 
+
+## [Day 11](http://adventofcode.com/2017/day/11) ([My Solutions](https://github.com/FranciscoAT/adventOfCode2017/tree/master/day11))
+
+### Part 1
+The question was, you are given a series of inputs that are directions to navigate in a hex grid. The input directions can be defined by `N,NE,NW,S,SW,SE` (flat-top hexes). Then at the end of the isntructions how many steps away is the final location from the center? By looking at a great resource online https://www.redblobgames.com/grids/hexagons/, we can quickly build a function that will increase `x,y,z` accordingly to input. Then we note that the `max` of the `abs` of `x,y,z` indicates the ring we are on. So we simply increase/decrease `x,y,z` according to our resource then output the absolute max of the 3 values which will give us the ring, and we know that the ring nubmer also indicates the exact number of steps we need to take to get to it. Note another solution to getting the final distance according to the resource is to sum the absolute values of `x,y,z` and divide it by 2. 
+
+### Part 2
+Same as the first but wants us to see what is the furthest the path takes us. So here we simply keep a `max_distance` value which at the end of each step will check if that value is greater than `max(abs(x),abs(y),abs(z))`, if yes replace the `max_distance` value with the `current_distance` otherwise continue looping through the path instructions. At the end ouput the `max_distance`. 
