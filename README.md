@@ -91,7 +91,7 @@ The question was, you are given a series of inputs that are directions to naviga
 ### Part 2
 Same as the first but wants us to see what is the furthest the path takes us. So here we simply keep a `max_distance` value which at the end of each step will check if that value is greater than `max(abs(x),abs(y),abs(z))`, if yes replace the `max_distance` value with the `current_distance` otherwise continue looping through the path instructions. At the end ouput the `max_distance`. 
 
-## [Day 12](http://adventofcode.com/2017/day/11) ([My Solutions](https://github.com/FranciscoAT/adventOfCode2017/tree/master/day12))
+## [Day 12](http://adventofcode.com/2017/day/12) ([My Solutions](https://github.com/FranciscoAT/adventOfCode2017/tree/master/day12))
 
 ### Part 1
 Todays question was that given a list of programs, and a related list to each of those programs indicating which program they can talk to. The communication was bidirectional. What was the number of programs in the group for program `0`. My solution was I created a dictionary of each program and their related programs. Then starting at the related programs to `0`, I recursively went through them creating a list of programs in this group. If the program was already in the group it would skip it as it would have had to have been checked. In addition I used a `set` to ensure no duplicates snuck their way in. Then I returned this `set` and printed the length which is the number of programs in the group.
